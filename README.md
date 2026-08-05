@@ -15,4 +15,4 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-https://drive.google.com/file/d/1mQQWew-rDvu2ywEWN6PTNKMAAIdAt87p/view?usp=drive_link
+https://drive.google.com/file/d/1mQQWew-rDvu2ywEWN6PTNKMAAIdAt87p/view?usp=sharing
