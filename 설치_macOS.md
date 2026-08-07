@@ -64,6 +64,19 @@ brew install node@22 && brew link --overwrite node@22
 
 ---
 
+### ⑤-1 (필요 시) link 오류 해결 — "not writable"
+
+```sh
+sudo chown -R "$(whoami)" /usr/local/include/node /usr/local/lib/node_modules /usr/local/share/doc/node /usr/local/share/man/man1 /usr/local/share/systemtap /usr/local/bin /usr/local/lib/dtrace 2>/dev/null; brew link --overwrite node@22
+```
+
+> ⑤의 link 단계에서 **"… is not writable"** 오류가 나면(이후 `node --version`도 안 잡힘) 실행합니다.
+> 과거 nodejs.org pkg 설치가 남긴 **root 소유 폴더** 때문에 나는 오류입니다(Intel Mac에서 발생 — 실측 2026-08-07).
+> 관리자 암호를 한 번 물어보며, 없는 폴더 오류는 무시됩니다. 그래도 다른 경로로 또 막히면 Homebrew 표준 처방
+> `sudo chown -R "$(whoami)" "$(brew --prefix)"/*` 실행 후 link만 다시. 끝나면 ④로 재확인.
+
+---
+
 ## 3단계 — 권한 준비 *(최초 1회 · 가장 중요한 단계)*
 
 ### ⑥ Gatekeeper 격리 해제 + 실행 권한 복원 ★
@@ -80,14 +93,14 @@ xattr -dr com.apple.quarantine . && chmod +x *.command
 
 ## 4단계 — 설치·기동 *(Windows의 bat 더블클릭에 해당)*
 
-### ⑦ (선택) cogflow 명령 전역 등록
+### ⑦ cogflow 명령 전역 등록
 
 ```sh
 ./setup-kbpn.command
 ```
 
-> 체험판 배포에서는 건너뛰어도 비서가 동작합니다. 오후 실습(M6·M7)에서 아무 폴더에서나
-> cogflow 명령을 쓰려면 실행해 두세요.
+> 오후 실습(M6 문서 변환·M7 브라우저)은 **실습팩 폴더에서 cogflow 명령을 직접 실행**해야 하므로
+> 지금 등록해 둡니다. 비서(Telegram)만 쓸 때는 없어도 되지만, 오후에 다시 돌아오지 않도록 여기서 마칩니다.
 
 ### ⑧ 내 비서 만들기 — 봇 토큰·chat id 입력
 
@@ -110,9 +123,24 @@ xattr -dr com.apple.quarantine . && chmod +x *.command
 
 ---
 
+## 5단계 — 오후 실습 준비 *(M6 문서 실습용 Python)*
+
+### ⑩ Python 준비 — 문서 실습(xlsx→md→docx)용
+
+```sh
+./setup-python.command
+```
+
+> 오후 M6 문서 실습의 변환 스크립트가 Python을 사용합니다. 이미 Python 3.10+가 있으면 즉시
+> "already installed"로 통과하고, 없으면 Homebrew로 설치합니다(1~2분). Homebrew가 없다는 오류가 나면
+> python.org의 macOS 공식 pkg(3.10+)를 설치한 뒤 이 스크립트를 다시 실행해 확인하세요.
+> **스킬 패키지는 여기서 설치하지 않습니다** — 오후에 에이전트가 직접 pip install 하는 과정을 지켜보는 것이 실습의 일부입니다.
+
+---
+
 ## 종료 *(교육 끝·재부팅 시)*
 
-### ⑩ 종료
+### ⑪ 종료
 
 ```sh
 ./stop-kbsa.command
