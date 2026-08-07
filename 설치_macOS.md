@@ -60,11 +60,32 @@ node --version
 brew install node@22 && brew link --overwrite node@22
 ```
 
-> Homebrew가 없으면 nodejs.org에서 macOS 공식 pkg(22 LTS)를 내려받아 설치해도 됩니다. 설치 후 ④로 다시 확인.
+> **brew 명령이 없으면**("command not found" — 깨끗한 Mac) **⑤-1로 Homebrew부터 설치**하고 돌아오세요.
+> 설치 후 ④로 다시 확인. link 단계에서 **"… is not writable"** 오류가 나면(이후 `node --version`도 안 잡힘) ⑤-3로.
+
+### ⑤-1 (필요 시) Homebrew 설치 — brew가 없을 때
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+> 공식 설치 스크립트입니다. **관리자 암호 1회**와 **Enter 확인**을 물어보고,
+> Xcode Command Line Tools를 함께 내려받아 **수 분~10분 이상** 걸릴 수 있습니다(네트워크에 따라 — 실측 2026-08-08).
+> 끝나면 ⑤-2로 PATH 등록.
+
+### ⑤-2 (필요 시) Homebrew PATH 등록 — 설치 직후 1회
+
+```sh
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile && eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+> 설치 직후에는 brew가 PATH에 없어 이 한 줄이 필요합니다(설치 로그 마지막 "Next steps"와 같은 내용,
+> Apple Silicon `/opt/homebrew` 기준. Intel Mac은 `/usr/local`이라 대개 불필요 — `brew --version`이 이미 잡히면 생략).
+> 확인: `brew --version` → ⑤로 돌아가 Node 설치.
 
 ---
 
-### ⑤-1 (필요 시) link 오류 해결 — "not writable"
+### ⑤-3 (필요 시) link 오류 해결 — "not writable"
 
 ```sh
 sudo chown -R "$(whoami)" /usr/local/include/node /usr/local/lib/node_modules /usr/local/share/doc/node /usr/local/share/man/man1 /usr/local/share/systemtap /usr/local/bin /usr/local/lib/dtrace 2>/dev/null; brew link --overwrite node@22
