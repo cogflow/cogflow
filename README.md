@@ -15,6 +15,9 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
+# ZIP (Mac OS)
 https://drive.google.com/file/d/1DfJ7R_pC4VU6-Dxr7i8iUe3lJHiE2bjt/view?usp=sharing
 
+# EXE (Windows)
+https://drive.google.com/file/d/1NoJrg91Swa-0mnD3vjcg9xPPxav8W264/view?usp=sharing
 
