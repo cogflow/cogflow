@@ -16,8 +16,8 @@ Here are some ideas to get you started:
 -->
 
 # ZIP (Mac OS)
-https://drive.google.com/file/d/1DfJ7R_pC4VU6-Dxr7i8iUe3lJHiE2bjt/view?usp=sharing
+https://drive.google.com/file/d/1NqczHA-jw9aAC4iVPlhze3pvxAyHEl2Q/view?usp=sharing
 
 # EXE (Windows)
-https://drive.google.com/file/d/1NoJrg91Swa-0mnD3vjcg9xPPxav8W264/view?usp=sharing
+https://drive.google.com/file/d/1FigTcX6ijAONayZHw-AxKgGoMkjFs4Q6/view?usp=sharing
 
