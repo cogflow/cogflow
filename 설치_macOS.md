@@ -32,7 +32,7 @@ mkdir -p ~/Day1 && tar -xf CogFlow_Day1.zip -C ~/Day1
 > 실행하면 **Enter passphrase:** 가 나옵니다 — **진행자가 안내한 비밀번호**를 입력하세요
 > (입력해도 화면에 표시되지 않는 것이 정상입니다. 프롬프트가 안 뜨면
 > `tar -xf CogFlow_Day1.zip --passphrase '비밀번호' -C ~/Day1` 처럼 직접 지정).
-> 홈 폴더 아래 **Day1** 폴더에 **kbpn**·**실습팩**·**skills** 세 폴더가 풀립니다.
+> 홈 폴더 아래 **Day1** 폴더에 **kbpn**·**실습팩** 두 폴더가 풀립니다.
 
 ### ③ kbpn 폴더로 이동
 
